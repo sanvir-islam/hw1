@@ -6,7 +6,6 @@ function App() {
 
   function handleUserData(data) {
     const finalData = data.filter((post) => post.id <= 10);
-    console.log(finalData);
     setPosts(finalData);
   }
   useEffect(() => {
