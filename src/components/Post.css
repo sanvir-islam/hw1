@@ -1,0 +1,13 @@
+span {
+  color: rgb(193, 0, 0);
+}
+button {
+  padding: 8px 16px;
+  border: none;
+  color: rgb(193, 0, 0);
+  background-color: antiquewhite;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px dotted rgb(193, 0, 0);
+}
