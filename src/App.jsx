@@ -3,7 +3,7 @@ import Post from "./components/Post";
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [counter, setCounter] = useState(5);
+  const [counter, setCounter] = useState(5); //5-20 limit
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -20,7 +20,7 @@ function App() {
     setPosts([]);
   }
   function handleDecrement() {
-    if (counter === 5) return;
+    // if (counter === 5) return;
     setCounter((prevCount) => prevCount - 1);
     setPosts([]);
   }
@@ -31,7 +31,9 @@ function App() {
         Number of posts (5-20) :{" "}
         <span style={{ fontSize: "3rem", width: "30px", display: "inline-block" }}>{counter}</span>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <button onClick={handleDecrement}>-</button>
+        <button disabled={counter === 5} onClick={handleDecrement}>
+          -
+        </button>
         &nbsp;
         <button onClick={handleIncrement}>+</button>
       </h1>
