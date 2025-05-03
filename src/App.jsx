@@ -35,8 +35,8 @@ function App() {
         &nbsp;
         <button onClick={handleIncrement}>+</button>
       </h1>
-      <p>--------------------------------------------------------------------------------------------------</p>
-      <br />
+
+      <hr />
 
       {posts.map((post) => (
         <Post key={post.id} id={post.id} title={post.title} />
