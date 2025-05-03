@@ -15,7 +15,7 @@ function App() {
   }, [counter]);
 
   function handleIncrement() {
-    if (counter === 20) return;
+    if (counter === 10) return;
     setCounter((prevCount) => prevCount + 1);
   }
   function handleDecrement() {
@@ -26,10 +26,10 @@ function App() {
   return (
     <>
       <h1>
-        Number of posts (5-20) :{" "}
+        Number of posts (1-10) :{" "}
         <span style={{ fontSize: "3rem", width: "30px", display: "inline-block" }}>{counter}</span>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <button disabled={counter === 5} onClick={handleDecrement}>
+        <button disabled={counter === 1} onClick={handleDecrement}>
           -
         </button>
         &nbsp;
