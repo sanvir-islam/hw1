@@ -19,7 +19,7 @@ function App() {
     setCounter((prevCount) => prevCount + 1);
   }
   function handleDecrement() {
-    // if (counter === 5) return;
+    // if (counter === 1) return;
     setCounter((prevCount) => prevCount - 1);
   }
 
