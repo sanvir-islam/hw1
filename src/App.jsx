@@ -3,7 +3,7 @@ import Post from "./components/Post";
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [counter, setCounter] = useState(5); //5-20 limit
+  const [counter, setCounter] = useState(10);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
