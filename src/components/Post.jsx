@@ -1,16 +1,18 @@
-import "./Post.css";
+import "./Post.module.css";
+import "./../index.css";
 export default function Post({ id, title }) {
   return (
     <div>
-      <h1>
-        <span>ID</span>: {id} , <span>Title</span> : {title}
-        <br />
-        <button onClick={() => (window.location.href = `https://jsonplaceholder.typicode.com/posts/${id}`)}>
-          Details
+      <h2>
+        <p>
+          <span>ID</span>: {id} , <span>Title</span> : {title}
+        </p>
+        <button>
+          <a href={`https://jsonplaceholder.typicode.com/posts/${id}`} target="blank">
+            Details
+          </a>
         </button>
-        <br />
-        <br />
-      </h1>
+      </h2>
     </div>
   );
 }
