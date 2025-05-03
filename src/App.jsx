@@ -17,12 +17,10 @@ function App() {
   function handleIncrement() {
     if (counter === 20) return;
     setCounter((prevCount) => prevCount + 1);
-    setPosts([]);
   }
   function handleDecrement() {
     // if (counter === 5) return;
     setCounter((prevCount) => prevCount - 1);
-    setPosts([]);
   }
 
   return (
