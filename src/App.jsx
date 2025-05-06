@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Post from "./components/Post";
+import Counter from "./components/Counter";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -9,37 +10,21 @@ function App() {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
       .then((data) => {
-        const finalData = data.filter((post) => post.id <= counter);
+        const finalData = data.slice(0, counter);
         setPosts(finalData);
       });
   }, [counter]);
 
-  function handleIncrement() {
-    if (counter === 10) return;
-    setCounter((prevCount) => prevCount + 1);
+  function handleSetCounter(newCounter) {
+    setCounter(newCounter);
   }
-  function handleDecrement() {
-    // if (counter === 1) return;
-    setCounter((prevCount) => prevCount - 1);
-  }
-
   return (
     <>
-      <h1>
-        Number of posts (1-10) :{" "}
-        <span style={{ fontSize: "3rem", width: "30px", display: "inline-block" }}>{counter}</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <button disabled={counter === 1} onClick={handleDecrement}>
-          -
-        </button>
-        &nbsp;
-        <button onClick={handleIncrement}>+</button>
-      </h1>
-
+      <Counter counter={counter} handleSetCounter={handleSetCounter} />
       <hr />
 
       {posts.map((post) => (
-        <Post key={post.id} id={post.id} title={post.title} />
+        <Post key={post.id} post={post} />
       ))}
     </>
   );

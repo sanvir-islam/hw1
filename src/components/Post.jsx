@@ -1,18 +1,18 @@
 import "./Post.module.css";
 import "./../index.css";
-export default function Post({ id, title }) {
+import PostDetails from "./PostDetails";
+import { useState } from "react";
+export default function Post({ post }) {
+  const [detailsStatus, setDetailsStatus] = useState(false);
   return (
-    <div>
-      <h2>
+    <div style={{ display: "flex", justifyContent: "space-around", width: "80vw", height: "10rem" }}>
+      <h2 style={{ marginRight: "2rem" }}>
         <p>
-          <span>ID</span>: {id} , <span>Title</span> : {title}
+          <span>ID</span>: {post.id} , <span>Title</span> : {post.title}
         </p>
-        <button>
-          <a href={`https://jsonplaceholder.typicode.com/posts/${id}`} target="blank">
-            Details
-          </a>
-        </button>
+        <button onClick={() => setDetailsStatus(!detailsStatus)}>{detailsStatus ? "Cancel" : "Details"}</button>
       </h2>
+      <div style={{ width: "800px" }}>{detailsStatus && <PostDetails post={post} />}</div>
     </div>
   );
 }
